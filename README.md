@@ -1,7 +1,5 @@
 # RenuGrid - Renewable Energy Monitor
 
-![RenuGrid Logo](assets/images/logo.png?raw=true&width=150)
-
 A modern, cross-platform dashboard application built with Expo (React Native) for real-time monitoring of renewable energy systems. RenuGrid provides a clean, intuitive interface to visualize key metrics like power, voltage, and current flow.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -10,18 +8,6 @@ A modern, cross-platform dashboard application built with Expo (React Native) fo
 [![Styled Components](https://img.shields.io/badge/Styled-Components-db7093.svg)](https://styled-components.com/)
 
 ---
-
-## 📸 Screenshots
-
-Here’s a glimpse of the RenuGrid dashboard in both light and dark modes.
-
-| Light Mode                                      | Dark Mode                                       |
-| ----------------------------------------------- | ----------------------------------------------- |
-| ![RenuGrid Light Mode](<Your-Screenshot-URL-Light.png>) | ![RenuGrid Dark Mode](<Your-Screenshot-URL-Dark.png>) |
-| *Screenshot of the dashboard in light mode.*    | *Screenshot of the dashboard in dark mode.*     |
-
-*(**Note:** Replace `<Your-Screenshot-URL-Light.png>` and `<Your-Screenshot-URL-Dark.png>` with actual URLs to your project screenshots after you upload them.)*
-
 ## ✨ Features
 
 -   **Real-time Dashboard:** Instantly view live data from your energy system.
