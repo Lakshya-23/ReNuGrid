@@ -1,3 +1,70 @@
+# RenuGrid - Renewable Energy Monitor
+
+![RenuGrid Logo](assets/images/logo.png?raw=true&width=150)
+
+A modern, cross-platform dashboard application built with Expo (React Native) for real-time monitoring of renewable energy systems. RenuGrid provides a clean, intuitive interface to visualize key metrics like power, voltage, and current flow.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Expo Version](https://img.shields.io/badge/Expo-SDK%2050-informational.svg)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Enabled-3178C6.svg)](https://www.typescriptlang.org/)
+[![Styled Components](https://img.shields.io/badge/Styled-Components-db7093.svg)](https://styled-components.com/)
+
+---
+
+## 📸 Screenshots
+
+Here’s a glimpse of the RenuGrid dashboard in both light and dark modes.
+
+| Light Mode                                      | Dark Mode                                       |
+| ----------------------------------------------- | ----------------------------------------------- |
+| ![RenuGrid Light Mode](<Your-Screenshot-URL-Light.png>) | ![RenuGrid Dark Mode](<Your-Screenshot-URL-Dark.png>) |
+| *Screenshot of the dashboard in light mode.*    | *Screenshot of the dashboard in dark mode.*     |
+
+*(**Note:** Replace `<Your-Screenshot-URL-Light.png>` and `<Your-Screenshot-URL-Dark.png>` with actual URLs to your project screenshots after you upload them.)*
+
+## ✨ Features
+
+-   **Real-time Dashboard:** Instantly view live data from your energy system.
+-   **Core Metrics:** Monitor essential stats at a glance:
+    -   Bus Voltage (V)
+    -   Current Flow (A)
+    -   Power Output (W)
+    -   System Status (e.g., Consuming)
+-   **Modern Dual-Axis Chart:** Visualize Power (W) and Current (A) trends simultaneously on a single, clean graph with gradient fills.
+-   **Adaptive Theme:** Seamlessly switch between a beautiful Light and Dark mode using React Context.
+-   **Cross-Platform:** Built with Expo to run natively on both iOS and Android from a single codebase.
+-   **Animated Splash Screen:** A smooth, animated entry into the application for a professional feel.
+-   **Modular & Scalable:** Built with reusable components for easy maintenance and future expansion.
+
+## 🛠️ Tech Stack & Tooling
+
+This project is built using a modern, robust, and scalable mobile development stack.
+
+### **Core Framework & Language**
+-   **[React Native](https://reactnative.dev/)**: A JavaScript framework for writing real, natively rendering mobile applications for iOS and Android.
+-   **[Expo (SDK 50)](https://expo.dev/)**: A framework and platform for universal React applications. It provides a managed workflow, abstracting away the complexities of native development.
+-   **[TypeScript](https://www.typescriptlang.org/)**: A strongly typed superset of JavaScript that adds static types, improving code quality and maintainability.
+-   **[NextJs](https://nextjs.org/)**: The core library for building user interfaces with a component-based architecture.
+-   **[Arduino](https://www.arduino.cc/)**: For building and controlling electronic projects.
+
+### **UI & Styling**
+-   **[Styled Components](https://styled-components.com/)**: A popular CSS-in-JS library that enables component-level styling with the full power of JavaScript.
+-   **[React Navigation](https://reactnavigation.org/)**: The de-facto standard for routing and navigation in React Native applications, used here for the stack navigator.
+-   **[Expo Vector Icons](https://docs.expo.dev/guides/icons/)**: Provides access to a rich library of icons (Feather, MaterialCommunityIcons, etc.) for a clean UI.
+
+### **Animation & Visualization**
+-   **[Moti](https://moti.fyi/)**: A powerful and declarative animation library for React Native, built on top of Reanimated 2. Used for micro-animations and the splash screen.
+-   **[React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)**: The underlying animation engine that enables high-performance, 60 FPS animations on the native UI thread.
+-   **[React Native SVG Charts](https://github.com/JesperLekland/react-native-svg-charts)**: A library for creating beautiful and interactive charts and graphs.
+-   **[React Native SVG](https://github.com/react-native-svg/react-native-svg)**: Provides SVG support to React Native, a necessary dependency for the charting library.
+
+### **Development Environment & Tooling**
+-   **[Node.js](https://nodejs.org/)**: The JavaScript runtime environment used to execute the development server.
+-   **[NPM](https://www.npmjs.com/)**: The default package manager for Node.js, used for managing project dependencies.
+-   **[Metro Bundler](https://metrobundler.dev/)**: The JavaScript bundler used by React Native to compile code and assets into a single bundle for the app to run.
+-   **[Expo Go](https://expo.dev/client)**: A client app for iOS and Android that allows for rapid development and testing without needing to build a native binary.
+-   **[ESLint](https://eslint.org/)**: A pluggable and configurable linter tool to find and fix problems in JavaScript and TypeScript code, ensuring code quality and consistency.
+-   **[Babel](https://babeljs.io/)**: A JavaScript compiler used to transform modern JavaScript (ES6+) and JSX into code that can run in older environments.
 
 ## 🚀 Getting Started
 
@@ -13,8 +80,8 @@ Follow these instructions to get the project up and running on your local machin
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/RenuGrid.git
-    cd RenuGrid
+    git clone https://github.com/Lakshya-23/ReNuGrid.git
+    cd ReNuGrid
     ```
 
 2.  **Install dependencies:**
