@@ -1,10 +1,5 @@
 # RenuGrid
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Expo Version](https://img.shields.io/badge/Expo-SDK%2050-informational.svg)](https://expo.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-Enabled-3178C6.svg)](https://www.typescriptlang.org/)
-[![Styled Components](https://img.shields.io/badge/Styled-Components-db7093.svg)](https://styled-components.com/)
-
 ---
 ## ✨ Features
 
