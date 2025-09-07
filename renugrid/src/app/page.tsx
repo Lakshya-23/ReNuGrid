@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import {
   Chart as ChartJS,
   CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler,
-  ChartData, ScriptableContext,
+  ChartData, ScriptableContext,ChartOptions,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { Variants } from 'framer-motion';
@@ -45,7 +45,7 @@ interface ThingSpeakFeed {
 }
 
 interface ThingSpeakResponse {
-  channel: any;
+  channel: unknown;
   feeds: ThingSpeakFeed[];
 }
 
@@ -131,6 +131,7 @@ const getCssVarRgba = (variableName: string): string => {
       return 'rgb(100, 116, 139)';
     }
   } catch (error) {
+    console.log(error);
     if (variableName === '--primary') {
       return 'rgb(59, 130, 246)';
     } else {
@@ -304,6 +305,7 @@ export default function DashboardPage() {
         gradient.addColorStop(1, color2);
         return gradient;
       } catch (error) {
+        console.log(error);
         console.warn('Failed to create gradient with colors:', color1, color2);
         return color1;
       }
@@ -354,95 +356,105 @@ export default function DashboardPage() {
     });
   }, [chartColors]);
 
-  const chartOptions = {
-    responsive: true, 
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        position: 'top' as const,
-        labels: {
+    // Replace your entire chartOptions object with this corrected version
+    const chartOptions: ChartOptions<'line'> = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top' as const,
+          labels: {
+            usePointStyle: true,
+            pointStyle: 'circle',
+            font: { weight: 600 },
+            color: 'hsl(var(--foreground))',
+            padding: 20
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(0, 0, 0, 0.9)',
+          titleColor: 'white',
+          bodyColor: 'white',
+          borderColor: 'rgba(255, 255, 255, 0.1)',
+          borderWidth: 1,
+          cornerRadius: 12,
+          displayColors: true,
           usePointStyle: true,
-          pointStyle: 'circle',
-          font: { weight: 600 },
-          color: 'hsl(var(--foreground))',
-          padding: 20
         }
       },
-      tooltip: {
-        backgroundColor: 'rgba(0, 0, 0, 0.9)',
-        titleColor: 'white',
-        bodyColor: 'white',
-        borderColor: 'rgba(255, 255, 255, 0.1)',
-        borderWidth: 1,
-        cornerRadius: 12,
-        displayColors: true,
-        usePointStyle: true,
-      }
-    },
-    scales: {
-        yPower: { 
-          type: 'linear' as const, 
-          position: 'left' as const, 
-          ticks: { 
-            color: 'hsl(var(--muted-foreground))',
-            font: { weight: 500 }
-          }, 
-          grid: { 
-            color: 'rgba(255, 255, 255, 0.05)',
-            drawBorder: false
-          }, 
-          title: { 
-            display: true, 
-            text: 'Power (mW)', 
-            color: 'rgb(34, 197, 94)',
-            font: { weight: 600, size: 12 }
-          } 
-        },
-        yCurrent: { 
-          type: 'linear' as const, 
-          position: 'right' as const, 
-          ticks: { 
-            color: 'hsl(var(--muted-foreground))',
-            font: { weight: 500 }
-          }, 
-          grid: { 
-            drawOnChartArea: false,
-            drawBorder: false
-          }, 
-          title: { 
-            display: true, 
-            text: 'Current (mA)', 
-            color: 'rgb(168, 85, 247)',
-            font: { weight: 600, size: 12 }
-          } 
-        },
-        x: { 
-          ticks: { 
-            color: 'hsl(var(--muted-foreground))', 
-            maxRotation: 0, 
-            autoSkip: true, 
-            maxTicksLimit: 8,
-            font: { weight: 500 }
-          }, 
-          grid: { 
-            color: 'rgba(255, 255, 255, 0.05)',
-            drawBorder: false
-          } 
-        },
-    },
-    interaction: { mode: 'index' as const, intersect: false },
-    elements: { 
-      point: { 
-        radius: 0, 
-        hoverRadius: 8,
-        borderWidth: 2 
+      scales: {
+          yPower: {
+            type: 'linear' as const,
+            position: 'left' as const,
+            ticks: {
+              color: 'hsl(var(--muted-foreground))',
+              font: { weight: 500 }
+            },
+            // --- CORRECT FIX FOR v4 ---
+            border: {
+              display: false
+            },
+            grid: {
+              color: 'rgba(255, 255, 255, 0.05)',
+            },
+            title: {
+              display: true,
+              text: 'Power (mW)',
+              color: 'rgb(34, 197, 94)',
+              font: { weight: 600, size: 12 }
+            }
+          },
+          yCurrent: {
+            type: 'linear' as const,
+            position: 'right' as const,
+            ticks: {
+              color: 'hsl(var(--muted-foreground))',
+              font: { weight: 500 }
+            },
+            // --- CORRECT FIX FOR v4 ---
+            border: {
+              display: false
+            },
+            grid: {
+              drawOnChartArea: false,
+            },
+            title: {
+              display: true,
+              text: 'Current (mA)',
+              color: 'rgb(168, 85, 247)',
+              font: { weight: 600, size: 12 }
+            }
+          },
+          x: {
+            ticks: {
+              color: 'hsl(var(--muted-foreground))',
+              maxRotation: 0,
+              autoSkip: true,
+              maxTicksLimit: 8,
+              font: { weight: 500 }
+            },
+            // --- CORRECT FIX FOR v4 ---
+            border: {
+              display: false
+            },
+            grid: {
+              color: 'rgba(255, 255, 255, 0.05)',
+            }
+          },
       },
-      line: {
-        borderJoinStyle: 'round' as const,
-        borderCapStyle: 'round' as const,
+      interaction: { mode: 'index' as const, intersect: false },
+      elements: {
+        point: {
+          radius: 0,
+          hoverRadius: 8,
+          borderWidth: 2
+        },
+        line: {
+          borderJoinStyle: 'round' as const,
+          borderCapStyle: 'round' as const,
+        }
       }
-    }
-  };
+    };
 
   // Fetch data from ThingSpeak API
   const fetchThingSpeakData = async () => {
@@ -798,7 +810,7 @@ export default function DashboardPage() {
                 className="h-full"
               >
                 {chartData.datasets.length > 0 && (
-                  <Line ref={chartRef} options={chartOptions as any} data={chartData} />
+                  <Line ref={chartRef} options={chartOptions} data={chartData} />
                 )}
               </motion.div>
             </CardContent>
